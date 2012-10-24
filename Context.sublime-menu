@@ -17,4 +17,13 @@
       { "id": "nodejsdrunarguments", "caption": "Debug + arguments", "command": "node_drun_arguments" }
     ]
   }] 
+},
+{
+  "id": "coffeemenu",
+  "caption": "Coffee",
+  "children": [
+      { "id": "coffeerun", "caption": "Run", "command": "coffee_run" },
+      { "id": "coffeerunarguments", "caption": "Run + arguments", "command": "coffee_run_arguments" },
+      { "id": "coffeecompile", "caption": "Compile to JS", "command": "coffee_compile" }
+  ]
 }]

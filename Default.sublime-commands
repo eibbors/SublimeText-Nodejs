@@ -1,4 +1,16 @@
-[{
+[
+{  "caption": "CoffeeScript::Run::Current File",
+  "command": "coffee_run"
+},
+{
+  "caption": "CoffeeScript::Compile::Current File",
+  "command": "coffee_compile"
+},
+{
+  "caption":  "CoffeeScript::Run::Current File + Arguments",
+  "command": "coffee_run_arguments"
+},
+{
   "caption": "Nodejs::Run::Current File",
   "command": "node_run"
 },

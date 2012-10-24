@@ -6,5 +6,9 @@
   },
   {"keys": ["alt+d"], "command": "node_drun"},
   {"keys": ["ctrl+alt+r"], "command": "node_run_arguments"},
-  {"keys": ["ctrl+alt+d"], "command": "node_drun_arguments"}
+  {"keys": ["ctrl+alt+d"], "command": "node_drun_arguments"},
+
+  {"keys": ["ctrl+shift+j"], "command": "coffee_compile"},
+  {"keys": ["ctrl+shift+c"], "command": "coffee_run"},
+  {"keys": ["ctrl+shift+alt+c"], "command": "coffee_run_arguments"}
 ]

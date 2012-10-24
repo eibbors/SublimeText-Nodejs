@@ -34,7 +34,15 @@
         { "id": "nodejsnpmpublish", "caption": "Publish", "command": "node_npm_publish" }
       ]
     },
-    { "id": "nodejsuglify", "caption": "Uglify", "command": "node_uglify" }
+    { "id": "nodejsuglify", "caption": "Uglify", "command": "node_uglify" },{
+    "id": "coffeemenu",
+    "caption": "Coffee",
+    "children": [
+      { "id": "coffeerun", "caption": "Run", "command": "coffee_run" },
+      { "id": "coffeerunarguments", "caption": "Run + arguments", "command": "coffee_run_arguments" },
+      { "id": "coffeecompile", "caption": "Compile to JS", "command": "coffee_compile" }
+    ]
+  }
     ]
   }]
 },

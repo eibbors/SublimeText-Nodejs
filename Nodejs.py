@@ -327,3 +327,48 @@ class NodeUglifyCommand(NodeTextCommand):
       self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
     else:
       self.panel(result)
+
+
+# Command to Run Coffee
+class CoffeeRunCommand(NodeTextCommand):
+  def run(self, edit):
+    command = ['coffee', self.view.file_name()]
+    self.run_command(command, self.command_done)
+
+  def command_done(self, result):
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('output_to_new_tab'):
+      self.scratch(result, title="Coffee Output", syntax="Packages/CoffeeScript/CoffeeScript.tmLanguage")
+    else:
+      self.panel(result)
+
+# Command to Run Coffee + Args
+class CoffeeRunArgumentsCommand(NodeTextCommand):
+  def run(self, edit):
+    self.get_window().show_input_panel("Arguments", "", self.on_input, None, None)
+
+  def on_input(self, message):
+    command = message.split()
+    command.insert(0, self.view.file_name());
+    command.insert(0, 'coffee');
+    self.run_command(command, self.command_done)
+
+  def command_done(self, result):
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('output_to_new_tab'):
+      self.scratch(result, title="Coffee Output", syntax="Packages/CoffeeScript/CoffeeScript.tmLanguage")
+    else:
+      self.panel(result)
+
+# Command to Compile your CoffeeScript
+class CoffeeCompileCommand(NodeTextCommand):
+  def run(self, edit):
+    command = ['coffee', '-cp', '--bare', self.view.file_name()]
+    self.run_command(command, self.command_done)
+
+  def command_done(self, result):
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('output_to_new_tab'):
+      self.scratch(result, title="JS [Compiled CoffeeScript]", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    else:
+      self.panel(result)
